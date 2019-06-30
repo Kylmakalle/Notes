@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="2048" height="2048"/>
+        <image name="Image" width="4096" height="4096"/>
     </resources>
 </document>
