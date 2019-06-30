@@ -7,6 +7,17 @@
 //
 
 import UIKit
+import CocoaLumberjack
+
+func setupLogger() {
+    DDLog.add(DDOSLogger.sharedInstance)
+    
+    let fileLogger: DDFileLogger = DDFileLogger()
+    fileLogger.rollingFrequency = 60 * 60 * 24
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 1
+    DDLog.add(fileLogger)
+
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupLogger()
+        DDLogInfo("APP LAUNCHED")
+        
         return true
     }
 
