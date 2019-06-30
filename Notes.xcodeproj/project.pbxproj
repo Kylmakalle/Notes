@@ -13,6 +13,9 @@
 		A5FF588122C8DAE90088D0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FF588022C8DAE90088D0D7 /* Assets.xcassets */; };
 		A5FF588422C8DAE90088D0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FF588222C8DAE90088D0D7 /* LaunchScreen.storyboard */; };
 		A5FF588F22C8DAE90088D0D7 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF588E22C8DAE90088D0D7 /* NotesTests.swift */; };
+		A5FF589D22C8DBB00088D0D7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589A22C8DBB00088D0D7 /* Note.swift */; };
+		A5FF589E22C8DBB00088D0D7 /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589B22C8DBB00088D0D7 /* NoteExtension.swift */; };
+		A5FF589F22C8DBB00088D0D7 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589C22C8DBB00088D0D7 /* FileNotebook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		A5FF588A22C8DAE90088D0D7 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FF588E22C8DAE90088D0D7 /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		A5FF589022C8DAE90088D0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5FF589A22C8DBB00088D0D7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A5FF589B22C8DBB00088D0D7 /* NoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
+		A5FF589C22C8DBB00088D0D7 /* FileNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		A5FF586D22C8DAE70088D0D7 = {
 			isa = PBXGroup;
 			children = (
+				A5FF589922C8DB7F0088D0D7 /* Model */,
 				A5FF587822C8DAE80088D0D7 /* Notes */,
 				A5FF588D22C8DAE90088D0D7 /* NotesTests */,
 				A5FF587722C8DAE80088D0D7 /* Products */,
@@ -94,6 +101,16 @@
 				A5FF589022C8DAE90088D0D7 /* Info.plist */,
 			);
 			path = NotesTests;
+			sourceTree = "<group>";
+		};
+		A5FF589922C8DB7F0088D0D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5FF589C22C8DBB00088D0D7 /* FileNotebook.swift */,
+				A5FF589A22C8DBB00088D0D7 /* Note.swift */,
+				A5FF589B22C8DBB00088D0D7 /* NoteExtension.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FF589F22C8DBB00088D0D7 /* FileNotebook.swift in Sources */,
 				A5FF587C22C8DAE80088D0D7 /* ViewController.swift in Sources */,
+				A5FF589E22C8DBB00088D0D7 /* NoteExtension.swift in Sources */,
 				A5FF587A22C8DAE80088D0D7 /* AppDelegate.swift in Sources */,
+				A5FF589D22C8DBB00088D0D7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,6 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUU76P392K;
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUU76P392K;
 				INFOPLIST_FILE = Notes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
