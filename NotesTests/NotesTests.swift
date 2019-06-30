@@ -9,26 +9,74 @@
 import XCTest
 @testable import Notes
 
-class NotesTests: XCTestCase {
-
+class NoteTests: XCTestCase {
+    
+    private let uid = "y7834equwghdjknsa"
+    private let title = "Test Title"
+    private let content = "Test Content\n\nTest Content"
+    private let importance = Note.Importance.normal
+    private var testNote: Note!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        testNote = Note(title: title, content: content, importance: importance)
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        testNote = nil
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    
+    func testNoteIsStruct() {
+        guard let note = testNote, let displayStyle = Mirror(reflecting: note).displayStyle else {
+            XCTFail()
+            return
         }
+        XCTAssertEqual(displayStyle, .struct)
     }
-
+    
+    func testNoteInitWithSetUid() {
+        let note = Note(uid: uid, title: title, content: content, importance: importance)
+        
+        XCTAssertEqual(uid, note.uid)
+    }
+    
+    func testNoteInitWithGeneratesUid() {
+        let note = Note(title: title, content: content, importance: importance)
+        
+        XCTAssertNotEqual(testNote.uid, note.uid)
+    }
+    
+    func testNoteInitTitle() {
+        XCTAssertEqual(testNote.title, title)
+    }
+    
+    func testNoteInitContent() {
+        XCTAssertEqual(testNote.content, content)
+    }
+    
+    func testNoteInitDefaulColor() {
+        XCTAssertEqual(testNote.color, UIColor.white)
+    }
+    
+    func testNoteInitWithCustomColor() {
+        let color = UIColor.red
+        let note = Note(title: title, content: content, importance: importance, color: color)
+        
+        XCTAssertEqual(note.color, color)
+    }
+    
+    func testNoteInitDefaultDate() {
+        XCTAssertNil(testNote.selfDestructionDate)
+    }
+    
+    func testNoteInitCustomDate() {
+        let date = Date()
+        let note = Note(title: title, content: content, importance: importance, selfDestructionDate: date)
+        
+        XCTAssertEqual(note.selfDestructionDate, date)
+    }
+    
 }
+

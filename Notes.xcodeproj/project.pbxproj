@@ -16,6 +16,8 @@
 		A5FF589D22C8DBB00088D0D7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589A22C8DBB00088D0D7 /* Note.swift */; };
 		A5FF589E22C8DBB00088D0D7 /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589B22C8DBB00088D0D7 /* NoteExtension.swift */; };
 		A5FF589F22C8DBB00088D0D7 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF589C22C8DBB00088D0D7 /* FileNotebook.swift */; };
+		A5FF58A422C9274C0088D0D7 /* FileNoteBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF58A322C9274C0088D0D7 /* FileNoteBookTests.swift */; };
+		A5FF58A622C927950088D0D7 /* NoteExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FF58A522C927950088D0D7 /* NoteExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		A5FF589A22C8DBB00088D0D7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A5FF589B22C8DBB00088D0D7 /* NoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		A5FF589C22C8DBB00088D0D7 /* FileNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
+		A5FF58A322C9274C0088D0D7 /* FileNoteBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNoteBookTests.swift; sourceTree = "<group>"; };
+		A5FF58A522C927950088D0D7 /* NoteExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				A5FF588E22C8DAE90088D0D7 /* NotesTests.swift */,
 				A5FF589022C8DAE90088D0D7 /* Info.plist */,
+				A5FF58A322C9274C0088D0D7 /* FileNoteBookTests.swift */,
+				A5FF58A522C927950088D0D7 /* NoteExtensionTests.swift */,
 			);
 			path = NotesTests;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5FF58A422C9274C0088D0D7 /* FileNoteBookTests.swift in Sources */,
+				A5FF58A622C927950088D0D7 /* NoteExtensionTests.swift in Sources */,
 				A5FF588F22C8DAE90088D0D7 /* NotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
