@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,210 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-yF-2Ih">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title for your note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jU-fm-auT">
+                                        <rect key="frame" x="0.0" y="16" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="titleEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TTR-ra-CA8"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RUg-Y6-kVE">
+                                        <rect key="frame" x="0.0" y="62" width="374" height="183.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use destroy date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14f-Wr-6gP">
+                                        <rect key="frame" x="0.0" y="266.5" width="130.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZfN-Nh-Pgn">
+                                        <rect key="frame" x="322" y="261.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="useDestroyDateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zQW-Hr-c3Z"/>
+                                        </connections>
+                                    </switch>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DLX-OI-gY5">
+                                        <rect key="frame" x="0.0" y="399.5" width="374" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="584782823.06942904">
+                                            <!--2019-07-14 07:40:23 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="destroyDateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qO8-OF-rhQ"/>
+                                        </connections>
+                                    </datePicker>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-vC-tqH" customClass="UIColorSelectView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="308.5" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="LAx-O3-6Zx"/>
+                                            <constraint firstAttribute="height" constant="75" id="Nmd-zc-gxO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="colorSelectType">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKh-l4-1qj" customClass="UIColorSelectView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="91" y="308.5" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="KXP-Nu-xIc"/>
+                                            <constraint firstAttribute="height" constant="75" id="g54-zk-vBa"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="colorSelectType">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktm-h1-ugB" customClass="UIColorSelectView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="308.5" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="10C-j9-Q6i"/>
+                                            <constraint firstAttribute="width" constant="75" id="jyr-XK-63P"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="colorSelectType">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chy-kC-yId" customClass="UIColorSelectView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="273" y="308.5" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="W40-aj-g1j"/>
+                                            <constraint firstAttribute="width" constant="75" id="WSi-ge-Aml"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="colorSelectType">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ktm-h1-ugB" firstAttribute="leading" secondItem="kKh-l4-1qj" secondAttribute="trailing" constant="16" id="4LF-bu-HDQ"/>
+                                    <constraint firstItem="14f-Wr-6gP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ZfN-Nh-Pgn" secondAttribute="leading" constant="8" symbolic="YES" id="5a0-uI-5f8"/>
+                                    <constraint firstItem="7jU-fm-auT" firstAttribute="width" secondItem="e8s-yF-2Ih" secondAttribute="width" id="AOu-Dc-Q9n"/>
+                                    <constraint firstItem="14f-Wr-6gP" firstAttribute="centerY" secondItem="ZfN-Nh-Pgn" secondAttribute="centerY" id="D1Q-Wx-vRR"/>
+                                    <constraint firstAttribute="bottom" secondItem="DLX-OI-gY5" secondAttribute="bottom" constant="20" id="D3o-lX-Cjg"/>
+                                    <constraint firstItem="DLX-OI-gY5" firstAttribute="width" secondItem="e8s-yF-2Ih" secondAttribute="width" id="Gvl-D0-for"/>
+                                    <constraint firstItem="kKh-l4-1qj" firstAttribute="centerY" secondItem="ewx-vC-tqH" secondAttribute="centerY" id="IKY-Cd-SlJ"/>
+                                    <constraint firstItem="ZfN-Nh-Pgn" firstAttribute="top" secondItem="RUg-Y6-kVE" secondAttribute="bottom" constant="16" id="J2d-jR-81B"/>
+                                    <constraint firstItem="7jU-fm-auT" firstAttribute="top" secondItem="e8s-yF-2Ih" secondAttribute="top" constant="16" id="O6b-gC-Wxm"/>
+                                    <constraint firstItem="DLX-OI-gY5" firstAttribute="top" secondItem="ewx-vC-tqH" secondAttribute="bottom" constant="16" id="RS8-R6-4az"/>
+                                    <constraint firstItem="ewx-vC-tqH" firstAttribute="leading" secondItem="e8s-yF-2Ih" secondAttribute="leading" id="TUG-oJ-Fu7"/>
+                                    <constraint firstItem="DLX-OI-gY5" firstAttribute="leading" secondItem="e8s-yF-2Ih" secondAttribute="leading" id="WV1-d9-L4u"/>
+                                    <constraint firstItem="Ktm-h1-ugB" firstAttribute="centerY" secondItem="ewx-vC-tqH" secondAttribute="centerY" id="ZHN-nv-f28"/>
+                                    <constraint firstItem="RUg-Y6-kVE" firstAttribute="leading" secondItem="e8s-yF-2Ih" secondAttribute="leading" id="bwh-ov-Xfg"/>
+                                    <constraint firstItem="kKh-l4-1qj" firstAttribute="leading" secondItem="ewx-vC-tqH" secondAttribute="trailing" constant="16" id="dTQ-jV-qrG"/>
+                                    <constraint firstAttribute="trailing" secondItem="7jU-fm-auT" secondAttribute="trailing" id="fss-4C-sKb"/>
+                                    <constraint firstItem="ewx-vC-tqH" firstAttribute="top" secondItem="ZfN-Nh-Pgn" secondAttribute="bottom" constant="16" id="g9r-zo-ynt"/>
+                                    <constraint firstItem="RUg-Y6-kVE" firstAttribute="width" secondItem="e8s-yF-2Ih" secondAttribute="width" id="lXe-yd-4gS"/>
+                                    <constraint firstItem="ZfN-Nh-Pgn" firstAttribute="trailing" secondItem="e8s-yF-2Ih" secondAttribute="trailing" constant="-3" id="qNB-Iv-4fC"/>
+                                    <constraint firstItem="RUg-Y6-kVE" firstAttribute="top" secondItem="7jU-fm-auT" secondAttribute="bottom" constant="16" id="uDR-MH-xck"/>
+                                    <constraint firstItem="chy-kC-yId" firstAttribute="leading" secondItem="Ktm-h1-ugB" secondAttribute="trailing" constant="16" id="vDI-J9-Qh3"/>
+                                    <constraint firstAttribute="leading" secondItem="7jU-fm-auT" secondAttribute="leading" id="xVN-f0-GBX"/>
+                                    <constraint firstItem="chy-kC-yId" firstAttribute="centerY" secondItem="ewx-vC-tqH" secondAttribute="centerY" id="zIA-lK-lWQ"/>
+                                    <constraint firstItem="14f-Wr-6gP" firstAttribute="leading" secondItem="e8s-yF-2Ih" secondAttribute="leading" id="zPh-Ka-Y6D"/>
+                                </constraints>
+                            </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkp-sM-Aqa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="a0b-51-fvo" customClass="ColorPickerView" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9J-aK-fZj">
+                                        <rect key="frame" x="188.5" y="768" width="37" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N10-iA-lCn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="l9J-aK-fZj" secondAttribute="bottom" constant="20" id="8UB-uD-cB9"/>
+                                    <constraint firstItem="a0b-51-fvo" firstAttribute="top" secondItem="Dkp-sM-Aqa" secondAttribute="top" id="Bp6-bd-EqS"/>
+                                    <constraint firstItem="a0b-51-fvo" firstAttribute="leading" secondItem="Dkp-sM-Aqa" secondAttribute="leading" id="Bzo-fg-kpT"/>
+                                    <constraint firstItem="a0b-51-fvo" firstAttribute="bottom" secondItem="l9J-aK-fZj" secondAttribute="top" constant="-10" id="CV6-s6-CCH"/>
+                                    <constraint firstItem="l9J-aK-fZj" firstAttribute="centerX" secondItem="Dkp-sM-Aqa" secondAttribute="centerX" id="UpN-gg-GLP"/>
+                                    <constraint firstItem="a0b-51-fvo" firstAttribute="trailing" secondItem="Dkp-sM-Aqa" secondAttribute="trailing" id="oLs-D5-Plf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dkp-sM-Aqa" secondAttribute="trailing" id="8Ia-0k-wb5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e8s-yF-2Ih" secondAttribute="bottom" id="APV-W4-k12"/>
+                            <constraint firstItem="Dkp-sM-Aqa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PZT-88-EHl"/>
+                            <constraint firstItem="e8s-yF-2Ih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aZg-e6-AoC"/>
+                            <constraint firstItem="e8s-yF-2Ih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g8u-Jl-SI4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e8s-yF-2Ih" secondAttribute="trailing" constant="20" id="kPi-6Y-8Gr"/>
+                            <constraint firstItem="Dkp-sM-Aqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lq2-b5-rj5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dkp-sM-Aqa" secondAttribute="bottom" id="zyT-Nw-vPW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="colorPickerDialogView" destination="Dkp-sM-Aqa" id="MFl-2B-G2q"/>
+                        <outlet property="colorPickerView" destination="a0b-51-fvo" id="Ilj-nL-cFu"/>
+                        <outlet property="contentTextView" destination="RUg-Y6-kVE" id="z3Z-vv-Y3p"/>
+                        <outlet property="customColorPicker" destination="chy-kC-yId" id="XTR-8Z-zqa"/>
+                        <outlet property="destroyDatePicker" destination="DLX-OI-gY5" id="Qxd-Yl-luY"/>
+                        <outlet property="doneButton" destination="l9J-aK-fZj" id="ATl-7X-cKP"/>
+                        <outlet property="greenColorPicker" destination="Ktm-h1-ugB" id="VlV-lT-ms0"/>
+                        <outlet property="mainScrollView" destination="e8s-yF-2Ih" id="afn-YG-pRg"/>
+                        <outlet property="redColorPicker" destination="kKh-l4-1qj" id="Dxu-Iw-tJH"/>
+                        <outlet property="titleTextField" destination="7jU-fm-auT" id="mNt-pV-2DM"/>
+                        <outlet property="useDestroyDateSwitch" destination="ZfN-Nh-Pgn" id="WYR-ix-ZYn"/>
+                        <outlet property="whiteColorPicker" destination="ewx-vC-tqH" id="seR-CH-sig"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
 </document>
